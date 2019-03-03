@@ -10,13 +10,12 @@ export class UserService {
         surname: 'Ostapkiewicz',
         email: 'a@b.cd',
         password: 'admin',
-      },
-      0,
+      }
     ),
   ];
 
   create(user: CreateUserDto): User {
-    const newUser = new User(user, this.users.length);
+    const newUser = new User(user);
     this.users.push(newUser);
     return newUser;
   }

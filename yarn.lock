@@ -3637,12 +3637,12 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
-jsonwebtoken@8.4.0:
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.4.0.tgz#8757f7b4cb7440d86d5e2f3becefa70536c8e46a"
-  integrity sha512-coyXjRTCy0pw5WYBpMvWOMN+Kjaik2MwTUIq9cna/W7NpO9E+iYbumZONAz3hcr+tXFJECoQVrtmIoC3Oz0gvg==
+jsonwebtoken@8.5.0:
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.0.tgz#ebd0ca2a69797816e1c5af65b6c759787252947e"
+  integrity sha512-IqEycp0znWHNA11TpYi77bVgyBO/pGESDh7Ajhas+u0ttkGkKYIIAjniL4Bw5+oVejVF+SYkaI7XKfwCCyeTuA==
   dependencies:
-    jws "^3.1.5"
+    jws "^3.2.1"
     lodash.includes "^4.3.0"
     lodash.isboolean "^3.0.3"
     lodash.isinteger "^4.0.4"
@@ -3651,6 +3651,7 @@ jsonwebtoken@8.4.0:
     lodash.isstring "^4.0.1"
     lodash.once "^4.0.0"
     ms "^2.1.1"
+    semver "^5.6.0"
 
 jsprim@^1.2.2:
   version "1.4.1"
@@ -3671,7 +3672,7 @@ jwa@^1.2.0:
     ecdsa-sig-formatter "1.0.10"
     safe-buffer "^5.0.1"
 
-jws@^3.1.5:
+jws@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jws/-/jws-3.2.1.tgz#d79d4216a62c9afa0a3d5e8b5356d75abdeb2be5"
   integrity sha512-bGA2omSrFUkd72dhh05bIAN832znP4wOU3lfuXtRBuGTbsmNmDXMQg28f0Vsxaxgk4myF5YkKQpz6qeRpMgX9g==
@@ -4789,10 +4790,10 @@ pretty-format@^23.6.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
-prisma-binding@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/prisma-binding/-/prisma-binding-2.3.2.tgz#08935b4eccb6cf25b3099407f741d172175a7af6"
-  integrity sha512-pqzNRYQWq+dyIt67Q1JTjxNmJc3QwInKrJtGp3+7BjE+xO+IYPbRuzsVduGGO2rucrvqjpqSEJ/dPE8+q75Mfg==
+prisma-binding@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/prisma-binding/-/prisma-binding-2.3.3.tgz#eab2b00c41db478b88cd500847c34324e329b603"
+  integrity sha512-e6sEmn9wa/YQKVLhoZiYioj0HWv+4RYTIrq2UXKAXXTGv2ckjIxaXzPr7QwXg0Zjd+BPpcIJSVFSfMmjpGtfDw==
   dependencies:
     apollo-link "1.2.8"
     apollo-link-error "1.1.7"
@@ -4803,7 +4804,7 @@ prisma-binding@^2.3.2:
     graphql-import "0.7.1"
     graphql-tools "4.0.4"
     http-link-dataloader "^0.1.6"
-    jsonwebtoken "8.4.0"
+    jsonwebtoken "8.5.0"
     subscriptions-transport-ws "0.9.15"
     yargs "12.0.5"
 
@@ -5232,7 +5233,7 @@ semver-diff@^2.0.0:
   dependencies:
     semver "^5.0.3"
 
-"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5, semver@^5.5.0:
+"semver@2 || 3 || 4 || 5", semver@^5.0.1, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5, semver@^5.5.0, semver@^5.6.0:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
   integrity sha512-RS9R6R35NYgQn++fkDWaOmqGoj4Ek9gGs+DPxNUZKuwE183xjJroKvyo1IzVFeXvUrvmALy6FWD5xrdJT25gMg==

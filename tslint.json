@@ -6,12 +6,19 @@
   },
   "rules": {
     "quotemark": [true, "single"],
-    "member-access": [false],
+    "member-access": [true],
     "ordered-imports": [false],
-    "max-line-length": [true, 150],
-    "member-ordering": [false],
-    "interface-name": [false],
+    "max-line-length": [true, 120],
+    "member-ordering": [true],
+    "interface-name": [true],
     "arrow-parens": false,
+    "class-name": true,
+    "comment-format": true,
+    "triple-equals": true,
+    "array-type": true,
+    "adjacent-overload-signatures": true,
+    "completed-docs": true,
+    "deprecation": true,
     "object-literal-sort-keys": false
   },
   "rulesDirectory": []

@@ -1,13 +1,18 @@
-import { Module } from '@nestjs/common';
-import { UserService } from './user.service';
+import { DynamicModule, Module } from '@nestjs/common';
 import { UserResolver } from './user.resolver';
-import { PubSub } from 'graphql-subscriptions';
+import { UserService } from './user.service';
 
 @Module({
   providers: [
     UserService,
     UserResolver,
-    PubSub,
   ],
 })
-export class UserModule {}
+export class UserModule {
+  static forRoot({ providers }): DynamicModule {
+    return {
+      module: UserModule,
+      providers: providers,
+    };
+  }
+}

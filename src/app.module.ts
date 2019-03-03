@@ -2,10 +2,13 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { UserModule } from './user/user.module';
+import { PubSub } from 'graphql-subscriptions';
 
 @Module({
   imports: [
-    UserModule,
+    UserModule.forRoot({
+      providers: [PubSub],
+    }),
     GraphQLModule.forRoot({
       include: [UserModule],
       typePaths: ['./**/*.graphql'],
@@ -16,5 +19,6 @@ import { UserModule } from './user/user.module';
       },
     }),
   ],
+  providers: [PubSub],
 })
 export class AppModule {}

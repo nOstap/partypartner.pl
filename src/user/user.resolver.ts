@@ -9,13 +9,12 @@ export class UserResolver {
   constructor(
     private readonly userService: UserService,
     private readonly pubSub: PubSub,
-  ) {}
+  ) {
+  }
 
   @Query()
   async getUsers() {
-    const users = await this.userService.findAll();
-    console.log(users, 'getUsers()');
-    return users;
+    return await this.userService.findAll();
   }
 
   @Query('user')
@@ -27,10 +26,9 @@ export class UserResolver {
   }
 
   @Mutation('createUser')
-  async create(@Args('createUserInput') args: CreateUserDto): Promise<boolean> {
+  async create(@Args('createUserInput') args: CreateUserDto): Promise<void> {
     const createdUser = await this.userService.create(args);
     this.pubSub.publish('userCreated', { userCreated: createdUser });
-    return !!createdUser;
   }
 
   @Subscription('userCreated')
