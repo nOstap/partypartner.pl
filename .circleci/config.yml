@@ -7,36 +7,36 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Show current branch
-        command: echo ${CIRCLE_BRANCH}
+          name: Show current branch
+          command: echo ${CIRCLE_BRANCH}
       - restore_cache:
-        keys:
+          keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
       - run: 
-        name: Install local dependencies
-        command: npm install
+          name: Install local dependencies
+          command: npm install
       - save_cache:
-        key: v1-dependencies-{{ checksum "package.json" }}
-        paths:
+          key: v1-dependencies-{{ checksum "package.json" }}
+          paths:
           - node_modules
       - run: 
-        name: Unit and integrations teststing
-        command: npm test
+          name: Unit and integrations teststing
+          command: npm test
       - run: 
-        name: Starting e2e testing
-        command: npm test:e2e
+          name: Starting e2e testing
+          command: npm test:e2e
       - run:
-        name: Building
-        command: |
+          name: Building
+          command: |
           if [ "${CIRCLE_BRANCH}" == "master" ]; then
               npm run build:prod
           else
               npm run build:dev
           fi
       - save_cache:
-        key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-        paths:
+          key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
           - dist
   deploy:
     working_directory: ~/party-partner
