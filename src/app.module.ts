@@ -19,7 +19,7 @@ import { PubSub } from 'graphql-subscriptions';
         outputAs: 'interface',
       },
     }),
-    TypeOrmModule.forRoot()
+    TypeOrmModule.forRoot(),
   ],
   providers: [PubSub],
 })

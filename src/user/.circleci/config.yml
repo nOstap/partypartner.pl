@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10.15.0
+      - image: mongo
+        container_name: pp-database
+        ports: 
+          - "27017:27017"
+        volumes: 
+          - "~/data:/data/db"
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: secret
+  steps:
+    - run: echo "Installing npm packages!"
+    - run: yarn install
+    - run: echo "Starting integration and unit testing."
+    - run: npm test"
+    - run: echo "Starting e2e testing"
+    - run: npm test:e2e
+    - run: echo "All completed and succeeed."

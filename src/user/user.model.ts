@@ -1,6 +1,6 @@
+import { PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Column, OneToOne } from 'typeorm';
 import { User as IUser, CreateUserInput, Group } from '../graphql.schema';
 import { MinLength, MaxLength } from 'class-validator';
-
 export class CreateUserDto implements CreateUserInput {
   @MinLength(3)
   @MaxLength(50)
@@ -15,11 +15,19 @@ export class CreateUserDto implements CreateUserInput {
 }
 
 export class User implements IUser {
+  @PrimaryGeneratedColumn('uuid')
   id: number;
-  name: string;
-  surname: string;
+  @CreateDateColumn()
+  created: Date;
+  @UpdateDateColumn()
+  updated: Date;
+  @Column('text')
   email: string;
-  password: string;
+  @Column('text')
+  name: string;
+  @Column('text')
+  surname: string;
+  @Column('int')
   group: Group;
   constructor(data: CreateUserDto) {
     Object.assign(this, data);

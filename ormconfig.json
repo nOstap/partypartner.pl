@@ -6,13 +6,5 @@
     "password": "secret",
     "synchronize": true,
     "logging": false,
-    "entities": [
-      "./src/**/*.entity.ts"
-    ],
-    "subscribers": [
-      "./src/**/*.subscriber.ts"
-    ],
-    "migrations": [
-      "./src/**/*.migrations.ts"
-    ]
+    "entities": ["/**/*.entity{.ts"]
   }
