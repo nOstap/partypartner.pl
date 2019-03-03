@@ -14,8 +14,8 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
       - run:
-          name: Install global dependencies
-          command: npm install -g yarn
+          name: Install yarn
+          command: npm install yarn
       - run: 
           name: Install local dependencies
           command: yarn install
