@@ -13,9 +13,12 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
+      - run:
+          name: Install global dependencies
+          command: npm instlal -g yarn
       - run: 
           name: Install local dependencies
-          command: npm install
+          command: yarn install
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
