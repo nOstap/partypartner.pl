@@ -13,9 +13,12 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
+      - run:
+          name: Install global dependencies
+          command: npm install -g yarn
       - run: 
           name: Install local dependencies
-          command: npm install
+          command: yarn install
       - save_cache:
           key: v1-dependencies-{{ checksum "package.json" }}
           paths:
@@ -29,11 +32,11 @@ jobs:
       - run:
           name: Building
           command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              npm run build:prod
-          else
-              npm run build:dev
-          fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                npm run build:prod
+            else
+                npm run build:dev
+            fi
       - save_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
